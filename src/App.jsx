@@ -12,9 +12,11 @@ export function App() {
     return (
         <div className="app-container">
             <Header />
-            <HanziCardContainer data={hanziPairs} />
-            <hr />
-            <PinyinCardContainer data={hanziPairs} />
+            <div>
+                <HanziCardContainer data={hanziPairs} />
+                <hr />
+                <PinyinCardContainer data={hanziPairs} />
+            </div>
         </div>
     );
 }

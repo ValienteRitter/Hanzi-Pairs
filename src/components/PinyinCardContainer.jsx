@@ -1,6 +1,6 @@
 import { PinyinCard } from "./PinyinCard";
 
-export function PinyinCardContainer({ data, handleClick }) {
+export function PinyinCardContainer({ data, handleClick, selectedPinyin }) {
     return (
         <div className="pinyin container">
             {data.map(({ pinyin }) => (
@@ -8,6 +8,7 @@ export function PinyinCardContainer({ data, handleClick }) {
                     pinyin={pinyin}
                     key={crypto.randomUUID()}
                     handleClick={handleClick}
+                    selectedPinyin={selectedPinyin}
                 />
             ))}
         </div>

@@ -39,11 +39,13 @@ export function App() {
                 <HanziCardContainer
                     data={hanziPairs}
                     handleClick={selectCard}
+                    selectedHanzi={selectedCard.hanzi}
                 />
                 <hr />
                 <PinyinCardContainer
                     data={hanziPairs}
                     handleClick={selectCard}
+                    selectedPinyin={selectedCard.pinyin}
                 />
             </div>
         </div>

@@ -68,3 +68,7 @@ header {
 header > p {
     font-size: x-large;
 }
+
+.highlighted {
+    background-color: var(--lotus-pink) !important;
+}

@@ -1,6 +1,6 @@
 import { HanziCard } from "./HanziCard";
 
-export function HanziCardContainer({ data, handleClick }) {
+export function HanziCardContainer({ data, handleClick, selectedHanzi }) {
     return (
         <div className="hanzi container">
             {data.map(({ hanzi }) => (
@@ -8,6 +8,7 @@ export function HanziCardContainer({ data, handleClick }) {
                     hanzi={hanzi}
                     key={crypto.randomUUID()}
                     handleClick={handleClick}
+                    selectedHanzi={selectedHanzi}
                 />
             ))}
         </div>

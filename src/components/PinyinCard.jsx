@@ -1,7 +1,9 @@
-export function PinyinCard({ pinyin }) {
+export function PinyinCard({ pinyin, handleClick }) {
     return (
         <div className="pinyin card">
-            <button type="button">{pinyin}</button>
+            <button type="button" onClick={(e) => handleClick(e, "pinyin")}>
+                {pinyin}
+            </button>
         </div>
     );
 }

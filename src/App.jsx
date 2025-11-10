@@ -22,11 +22,15 @@ export function App() {
     }
 
     useEffect(() => console.log(selectedCard), [selectedCard]);
+    useEffect(() => console.log(hanziPairs), [hanziPairs]);
 
     useEffect(() => {
         if (selectedCard.hanzi && selectedCard.pinyin) {
             if (checkHanziPairs(selectedCard)) {
                 handleScore((prev) => prev + 1);
+                handleHanziPairs((prev) =>
+                    prev.filter(({ hanzi }) => hanzi !== selectedCard.hanzi)
+                );
             } else {
                 handleScore(0);
                 handleHanziPairs(setHanziPairs(5, 1));
@@ -34,6 +38,10 @@ export function App() {
             handleSelectedCard({ pinyin: "", hanzi: "" });
         }
     }, [selectedCard]);
+
+    useEffect(() => {
+        if (hanziPairs.length === 0) handleHanziPairs(setHanziPairs(5, 1));
+    }, [hanziPairs]);
 
     return (
         <div className="app-container">
